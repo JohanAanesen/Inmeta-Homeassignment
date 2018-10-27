@@ -19,6 +19,11 @@ namespace Inmeta.Data
         public DateTime OrderDate { get; set; }
         public string Info { get; set; }
 
+        //Empty constructor
+        public Payload()
+        {
+
+        }
 
         //Payload constructor which can take both customer and order object to initilize
         public Payload(Customer customer, Order order)
