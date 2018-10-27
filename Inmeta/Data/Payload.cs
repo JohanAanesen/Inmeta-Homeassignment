@@ -16,6 +16,7 @@ namespace Inmeta.Data
         public string AddressTo { get; set; }
         public string Service { get; set; }
         public DateTime DoDate { get; set; }
+        public DateTime OrderDate { get; set; }
         public string Info { get; set; }
 
         public Payload()
@@ -35,6 +36,7 @@ namespace Inmeta.Data
             this.AddressTo = order.AddressTo;
             this.Service = order.Service;
             this.DoDate = order.DoDate;
+            this.OrderDate = order.OrderDate;
             this.Info = order.Info;
             
         }
@@ -63,6 +65,7 @@ namespace Inmeta.Data
                 AddressTo = this.AddressTo,
                 Service = this.Service,
                 DoDate = this.DoDate,
+                OrderDate = this.OrderDate,
                 Info = this.Info,
                 CustomerId = this.CustomerId
             };

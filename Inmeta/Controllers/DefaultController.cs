@@ -100,10 +100,13 @@ namespace Inmeta.Controllers
                 _context.Customer.Add(customer);
                 await _context.SaveChangesAsync();
 
-                //update customerId for order
-                order.CustomerId = customer.Id;
-
             }
+
+            //update customerId for order
+            order.CustomerId = customer.Id;
+
+            order.OrderDate = DateTime.Now;
+
             _context.Order.Add(order);
             await _context.SaveChangesAsync();
 
@@ -120,31 +123,53 @@ namespace Inmeta.Controllers
                 return BadRequest(ModelState);
             }
 
+            //new order from request
             Order newOrder = payload.GetOrder();
-            newOrder.OrderId = id;
 
+            //get old order from db
             Order result = _context.Order
                             .Where(b => b.OrderId == id)
                             .FirstOrDefault();
 
             if(result != null)
             {
+                //updates all the fields
                 result.AddressFrom = newOrder.AddressFrom;
                 result.AddressTo = newOrder.AddressTo;
                 result.Service = newOrder.Service;
                 result.DoDate = newOrder.DoDate;
                 result.Info = newOrder.Info;
               
+                //saves changes
                 await _context.SaveChangesAsync();
             }
             //204
             return NoContent();
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/Default/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            //get order
+            var order = await _context.Order.FindAsync(id);
+            //doesnt exist -> 404
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            //remove and save
+            _context.Order.Remove(order);
+            await _context.SaveChangesAsync();
+
+            //200
+            return Ok(order);
         }
     }
 }
