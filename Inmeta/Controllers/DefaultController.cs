@@ -23,17 +23,26 @@ namespace Inmeta.Controllers
 
         // GET: api/Default
         [HttpGet]
-        public IEnumerable<Order> Get()
+        public Payload[] Get()
         {
-            
-            //Payload[] payloads = new Payload[_context.Order.Count()];
-            //foreach (Order order in _context.Order){
-            //    Customer customer = _context.Customer.FindAsync(order.CustomerId);
+            IEnumerable<Order> orders = _context.Order;
 
-            //    Payload payload = new Payload();
-            //}
-            
-            return _context.Order;
+            Payload[] payloads = new Payload[_context.Order.Count()];
+            int iterator = 0;
+            foreach (Order order in orders)
+            {
+                Customer customer = _context.Customer
+                                .Where(cust => cust.Id == order.CustomerId)
+                                .FirstOrDefault();
+
+                if (customer != null)
+                {
+                    payloads[iterator++] = new Payload(customer, order);
+                }
+
+            }
+
+            return payloads;
         }
 
         // GET: api/Default/5
@@ -48,7 +57,7 @@ namespace Inmeta.Controllers
             //find order in db
             Order order = await _context.Order.FindAsync(id);
 
-            //order doesnt exist 404
+            //order doesnt exist, return 404
             if (order == null)
             {
                 return NotFound();
