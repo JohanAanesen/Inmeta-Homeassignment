@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Inmeta.Data;
 using Inmeta.Models;
 using System.Data.Entity;
+using Microsoft.AspNetCore.Cors;
 
 namespace Inmeta.Controllers
 {
