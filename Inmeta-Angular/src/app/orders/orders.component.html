@@ -1,0 +1,37 @@
+<div class="row">
+  <div *ngFor="let result of results" class="col-md-4" style="margin: 0px;">
+    <div class="card my-2 mx-2">
+      <div class="card-header">
+        <h2>{{result.service}}</h2>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <p>Name:</p>
+            <p>email:</p>
+            <p>phone:</p>
+            <p>addressFrom:</p>
+            <p>addressTo:</p>
+            <p>customerId:</p>
+            <p>orderId:</p>
+            <p>info:</p>
+            <p>doDate:</p>
+            <p>orderDate:</p>
+          </div>
+          <div class="col-7">
+            <p>{{result.name}}</p>
+            <p>{{result.email}}</p>
+            <p>{{result.phone}}</p>
+            <p>{{result.addressFrom}}</p>
+            <p>{{result.addressTo}}</p>
+            <p>{{result.customerId}}</p>
+            <p>{{result.orderId}}</p>
+            <p>{{result.info}}</p>
+            <p>{{result.doDate}}</p>
+            <p>{{result.orderDate}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
