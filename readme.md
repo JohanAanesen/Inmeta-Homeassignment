@@ -50,3 +50,16 @@ Exercise 2 - Web
 Todo:
 ---
 - [ ] Read up on Angular
+- [x] Use Bootstrap
+- [x] Dynamically create 'cards' for each order fetched from API
+- [ ] Create Order Form
+- [ ] Delete Button on each card
+- [ ] Edit button on each card
+    - [ ] Takes you to a edit card form
+- [ ] Search field?
+
+Technical Timeline:
+---
+- I followed some simple guides to setup the Angular project, I quickly ran into some problems related to GET'ing data from my API. First issue was that the API didn't have a Allow-Access-Origin something header, took a while but I solved it by updating my APi server to using CORS service. Now I believe the server will accept anything you throw at it. It probably isn't the best to leave it super open either.. :neutral_face: 
+- Second big problem I had was trying to get the data from the response and onto an object/array. It was a bit weird since I could get the response and print it flawlessly, but when I assigned it to a variable and tried to print the variable I would only get 'Undefined' response. After a little research I realized the get function is somewhat asynchronous so when I tried to print out the variable, it hadn't been set yet... bummer! :disappointed: 
+- Finally I can use some language/framework I know.. Bootstrap!
