@@ -30,8 +30,8 @@ namespace Inmeta
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<InmetaContext>(options =>
-                     //   options.UseInMemoryDatabase("fuck you"));
-                    options.UseSqlServer(Configuration.GetConnectionString("InmetaContext")));
+                     //   options.UseInMemoryDatabase(":)"));
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

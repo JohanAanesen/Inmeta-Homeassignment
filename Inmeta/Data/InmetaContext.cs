@@ -15,5 +15,7 @@ namespace Inmeta.Models
         }
 
         public DbSet<Inmeta.Data.Customer> Customer { get; set; }
+
+        public DbSet<Inmeta.Data.Order> Order { get; set; }
     }
 }
