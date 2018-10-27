@@ -9,8 +9,8 @@ Todo:
 - [x] /GET/{id} - return order with {id}
 - [x] /POST - create new order
 - [x] /PUT/{id} - Update order with {id}
-- [ ] /DELETE/{id} - Delete order with {id}
-- [ ] Put demo/server up on azure
+- [x] /DELETE/{id} - Delete order with {id}
+- [x] Put demo/server up on azure
 
 Technical timeline:
 ---
@@ -20,7 +20,7 @@ Technical timeline:
     - Tried Code-first, didn't work for some other reason
     - Combined the two and now it did work for some weird reason
 
-- Because the application should be extendable, I deemed it natural to split the data into Customer and Order and create a one to many relationship.
+- Because the application should be extendable, I deemed it natural to split the data into Customer and Order and create a one to many relationship between them.
 - I could have different classes for the order type/service, but since all the orders contain the same information I keep them in the same class.
     - Then I wanted the service to be defined as an ENUM, but that seems to only be an MySQL thing :-1: , therefore I am keeping it as a string until further investigation.
 
@@ -29,6 +29,9 @@ Technical timeline:
 
 - I think the above solution worked out pretty well. Will continue implementing the REST service this way :beers: 
 - Spent some time trying to figure out updating the data, my app would spout on a part of the code where i tried to update customerId. I had forgotten this was a foreign key and thus nothing would happen :neutral_face: 
+- I had another problem where my OrderDate didn't get set, fixed it by first going through my classes and seeing that they did in fact have the OrderDate attribute in there. Then I checked the DB for the same, and finally I added a function that actually sets it now. I wanted the DB to default set it to currenttime, but that didnt work out.
+- Spent some time now getting the application/api up on Azure, it is available through https://inmeta20181027060410.azurewebsites.net/api
+- I should use EnvVars for saving username/password for the connectionstring, I just don't know how in .Net yet.
 
 Lessons learned:
 ---
@@ -36,3 +39,14 @@ Lessons learned:
 - EntityFramework doesn't feel like working, therefore work around it
 - It's hard to plan ahead when you don't know the frameworks or language
 - Don't update Id's with foreign keys attached to them
+- Getting to know C# / .Net Core and Entity Framework
+- Deploying on Azure! :clap: :tada: 
+
+---
+Exercise 2 - Web
+===
+- Write a web-application that satisfies the user stories. The web application will use the API built in exercise 1.
+
+Todo:
+---
+- [ ] Read up on Angular
