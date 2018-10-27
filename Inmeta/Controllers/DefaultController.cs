@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Inmeta.Data;
 using Inmeta.Models;
+using System.Data.Entity;
 
 namespace Inmeta.Controllers
 {
@@ -25,10 +26,14 @@ namespace Inmeta.Controllers
         [HttpGet]
         public Payload[] Get()
         {
+            //all orders
             IEnumerable<Order> orders = _context.Order;
-
+            //Array to keep all payloads in
             Payload[] payloads = new Payload[_context.Order.Count()];
+
             int iterator = 0;
+
+            //for all orders, get customer belonging to the order, make a payload and add to array
             foreach (Order order in orders)
             {
                 Customer customer = _context.Customer
@@ -108,8 +113,32 @@ namespace Inmeta.Controllers
 
         // PUT: api/Default/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put([FromRoute] int id, [FromBody] Payload payload)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Order newOrder = payload.GetOrder();
+            newOrder.OrderId = id;
+
+            Order result = _context.Order
+                            .Where(b => b.OrderId == id)
+                            .FirstOrDefault();
+
+            if(result != null)
+            {
+                result.AddressFrom = newOrder.AddressFrom;
+                result.AddressTo = newOrder.AddressTo;
+                result.Service = newOrder.Service;
+                result.DoDate = newOrder.DoDate;
+                result.Info = newOrder.Info;
+              
+                await _context.SaveChangesAsync();
+            }
+            //204
+            return NoContent();
         }
 
         // DELETE: api/ApiWithActions/5

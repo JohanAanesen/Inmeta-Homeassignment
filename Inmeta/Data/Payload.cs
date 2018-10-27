@@ -8,6 +8,7 @@ namespace Inmeta.Data
     public class Payload
     {
         public int CustomerId { get; set; }
+        public int OrderId { get; set; }
         public string Name { get; set; }
         public int Phone { get; set; }
         public string Email { get; set; }
@@ -26,6 +27,7 @@ namespace Inmeta.Data
         public Payload(Customer customer, Order order)
         {
             this.CustomerId = customer.Id;
+            this.OrderId = order.OrderId;
             this.Name = customer.Name;
             this.Phone = customer.Phone;
             this.Email = customer.Email;
@@ -40,11 +42,13 @@ namespace Inmeta.Data
         //Returns customer from payload object
         public Customer GetCustomer()
         {
-            Customer customer = new Customer();
-            customer.Id = this.CustomerId;
-            customer.Name = this.Name;
-            customer.Phone = this.Phone;
-            customer.Email = this.Email;
+            Customer customer = new Customer
+            {
+                Id = this.CustomerId,
+                Name = this.Name,
+                Phone = this.Phone,
+                Email = this.Email
+            };
 
             return customer;
         }
@@ -52,13 +56,16 @@ namespace Inmeta.Data
         //Returns order from payload object
         public Order GetOrder()
         {
-            Order order = new Order();
-            order.AddressFrom = this.AddressFrom;
-            order.AddressTo = this.AddressTo;
-            order.Service = this.Service;
-            order.DoDate = this.DoDate;
-            order.Info = this.Info;
-            order.CustomerId = this.CustomerId;
+            Order order = new Order
+            {
+                OrderId = this.OrderId,
+                AddressFrom = this.AddressFrom,
+                AddressTo = this.AddressTo,
+                Service = this.Service,
+                DoDate = this.DoDate,
+                Info = this.Info,
+                CustomerId = this.CustomerId
+            };
 
             return order;
         }

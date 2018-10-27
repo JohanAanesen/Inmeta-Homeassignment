@@ -8,9 +8,9 @@ Todo:
 - [x] /GET - return all orders
 - [x] /GET/{id} - return order with {id}
 - [x] /POST - create new order
-- [ ] /PUT/{id} - Update order with {id}
+- [x] /PUT/{id} - Update order with {id}
 - [ ] /DELETE/{id} - Delete order with {id}
-
+- [ ] Put demo/server up on azure
 
 Technical timeline:
 ---
@@ -27,10 +27,12 @@ Technical timeline:
 - As of now I have 2 api endpoints, I want to merge these into one api for the application and the payload i should receive contains all info I need about both customer and order.
     - Think I can solve this by creating a class in which to accept the api data, and splitting it between the Customer and Order class.
 
-- I think the above solution worked out pretty well. Will continue implementing the rest service this way :beers: 
+- I think the above solution worked out pretty well. Will continue implementing the REST service this way :beers: 
+- Spent some time trying to figure out updating the data, my app would spout on a part of the code where i tried to update customerId. I had forgotten this was a foreign key and thus nothing would happen :neutral_face: 
 
 Lessons learned:
 ---
 - ConnectionString from SQL Server doesnt work, connect through Visual Studio and use the ConnectionString from it's properties instead.
 - EntityFramework doesn't feel like working, therefore work around it
 - It's hard to plan ahead when you don't know the frameworks or language
+- Don't update Id's with foreign keys attached to them
