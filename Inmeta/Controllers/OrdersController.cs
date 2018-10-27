@@ -44,6 +44,10 @@ namespace Inmeta.Controllers
                 return NotFound();
             }
 
+            //adding Customer to Order thing
+          //  Customer customer = await _context.Customer.FindAsync(order.CustomerId);
+           // order.Customer = customer;
+
             return Ok(order);
         }
 
@@ -90,6 +94,13 @@ namespace Inmeta.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            //adding Customer to Order thing
+            //   Customer customer = await _context.Customer.FindAsync(order.CustomerId);
+            //  order.Customer = customer;
+
+            //add order to customer
+            //Customer customer = await _context.Customer.FindAsync(order.CustomerId);
 
             _context.Order.Add(order);
             await _context.SaveChangesAsync();
