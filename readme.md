@@ -5,7 +5,7 @@ Exercise 1 – Service API
 
 Todo:
 ---
-- [ ] /GET - return all orders
+- [x] /GET - return all orders
 - [x] /GET/{id} - return order with {id}
 - [x] /POST - create new order
 - [ ] /PUT/{id} - Update order with {id}
@@ -26,6 +26,8 @@ Technical timeline:
 
 - As of now I have 2 api endpoints, I want to merge these into one api for the application and the payload i should receive contains all info I need about both customer and order.
     - Think I can solve this by creating a class in which to accept the api data, and splitting it between the Customer and Order class.
+
+- I think the above solution worked out pretty well. Will continue implementing the rest service this way :beers: 
 
 Lessons learned:
 ---
