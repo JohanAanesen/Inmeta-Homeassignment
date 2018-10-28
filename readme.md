@@ -46,6 +46,8 @@ Lessons learned:
 Exercise 2 - Web
 ===
 - Write a web-application that satisfies the user stories. The web application will use the API built in exercise 1.
+- Requirements: React, Vue or Angular preferred (Pure HTML / CSS / JS will be accepted. You can add any other js library if needed). Preferably, use GULP/Webpack to run and pack the web application.
+    - I went with Angular because I've been asked in 3 different interviews if I know "front end frameworks like Angular" (where my answer has always been No).
 
 Todo:
 ---
