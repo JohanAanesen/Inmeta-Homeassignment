@@ -29,4 +29,8 @@ export class OrderService {
     return this.http.delete(deleteUrl);
   }
 
+  newOrder(order: Payload): Observable<any> {
+    return this.http.post(this.apiUrl, order);
+  }
+
 }

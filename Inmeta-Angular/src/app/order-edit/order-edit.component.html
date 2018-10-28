@@ -18,25 +18,25 @@
 
             <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
             <div class="col-sm-10">
-              <input disabled type="text" class="form-control form-control-sm" id="name" placeholder="{{order.name}}" value="{{order.name}}" [(ngModel)]="order.name">
+              <input required disabled type="text" class="form-control form-control-sm" id="name" placeholder="{{order.name}}" value="{{order.name}}" [(ngModel)]="order.name">
             </div>
             <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
             <div class="col-sm-10">
-              <input disabled type="email" class="form-control form-control-sm" id="email" placeholder="{{order.email}}" value="{{order.email}}" [(ngModel)]="order.email">
+              <input required disabled type="email" class="form-control form-control-sm" id="email" placeholder="{{order.email}}" value="{{order.email}}" [(ngModel)]="order.email">
             </div>
             <label for="phone" class="col-sm-2 col-form-label col-form-label-sm">Phone</label>
             <div class="col-sm-10">
-              <input disabled type="number" class="form-control form-control-sm" id="phone" placeholder="{{order.phone}}" value="{{order.phone}}" [(ngModel)]="order.phone">
+              <input required disabled type="number" class="form-control form-control-sm" id="phone" placeholder="{{order.phone}}" value="{{order.phone}}" [(ngModel)]="order.phone">
             </div>
             <label for="addressFrom" class="col-sm-2 col-form-label col-form-label-sm">Address From</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control form-control-sm" id="addressFrom" placeholder="{{order.addressFrom}}" value="{{order.addressFrom}}" [(ngModel)]="order.addressFrom">
+              <input required type="text" class="form-control form-control-sm" id="addressFrom" placeholder="{{order.addressFrom}}" value="{{order.addressFrom}}" [(ngModel)]="order.addressFrom">
             </div>
             <label for="addressTo" class="col-sm-2 col-form-label col-form-label-sm">Address To</label>
             <div class="col-sm-10">
               <input type="text" class="form-control form-control-sm" id="addressTo" placeholder="{{order.addressTo}}" value="{{order.addressTo}}" [(ngModel)]="order.addressTo">
             </div>
-            <label for="doDate" class="col-sm-2 col-form-label col-form-label-sm">Do Date</label>
+            <label required  for="doDate" class="col-sm-2 col-form-label col-form-label-sm">Do Date</label>
             <div class="col-sm-10">
               <input type="datetime-local" class="form-control form-control-sm" id="doDate" placeholder="{{order.doDate}}" value="{{order.doDate}}" [(ngModel)]="order.doDate">
             </div>

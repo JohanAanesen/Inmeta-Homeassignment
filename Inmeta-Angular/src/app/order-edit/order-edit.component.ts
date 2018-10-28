@@ -11,7 +11,7 @@ import {Location} from '@angular/common';
 })
 export class OrderEditComponent implements OnInit {
   order: Payload;
-
+  services = ['Moving', 'Packing', 'Cleaning'];
 
   constructor(
     private orderService: OrderService,
@@ -19,7 +19,7 @@ export class OrderEditComponent implements OnInit {
     private location: Location
   ) { }
 
-  services = ['Moving', 'Packing', 'Cleaning'];
+
 
   ngOnInit() {
     this.getOrder();

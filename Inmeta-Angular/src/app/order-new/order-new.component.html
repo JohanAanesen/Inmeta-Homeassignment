@@ -1,3 +1,59 @@
-<p>
-  order-new works!
-</p>
+<div class="row">
+  <div *ngIf="order" class="col-md-5" style="margin: 0px;">
+    <div class="card my-2 mx-2">
+      <div class="card-header">
+        <h2 class="float-left">New Order: {{order.orderId}}</h2>
+        <div class="float-right"><a href="/"><button class="btn btn-warning"><i class="fas fa-times"></i></button></a></div>
+      </div>
+      <div class="card-body">
+        <form id="skjema" name="skjema" #heroForm="ngForm" (ngSubmit)="saveOrder()">
+          <div class="form-group row">
+            <label for="service" class="col-sm-2 col-form-label col-form-label-sm">Service</label>
+            <div class="col-sm-10">
+              <select id="service" name="service" class="form-control" required [(ngModel)]="order.service" >
+                <option *ngFor="let ser of services" [value]="ser">{{ser}}</option>
+              </select>
+            </div>
+            <br>
+            <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+            <div class="col-sm-10">
+              <input required type="text" class="form-control form-control-sm" name="name" id="name" placeholder="{{order.name}}" value="{{order.name}}" [(ngModel)]="order.name" #name="ngModel">
+            </div>
+            <br>
+            <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+            <div class="col-sm-10">
+              <input required type="email" class="form-control form-control-sm" name="email" id="email" placeholder="{{order.email}}" value="{{order.email}}" [(ngModel)]="order.email" #email="ngModel">
+            </div>
+            <br>
+            <label   for="phone" class="col-sm-2 col-form-label col-form-label-sm">Phone</label>
+            <div class="col-sm-10">
+              <input required type="number" class="form-control form-control-sm" name="phone" id="phone" placeholder="{{order.phone}}" value="{{order.phone}}" [(ngModel)]="order.phone" #phone="ngModel">
+            </div>
+            <br>
+            <label for="addressFrom" class="col-sm-2 col-form-label col-form-label-sm">Address From</label>
+            <div class="col-sm-10">
+              <input required type="text" class="form-control form-control-sm" name="addressto" id="addressFrom" placeholder="{{order.addressFrom}}" value="{{order.addressFrom}}" [(ngModel)]="order.addressFrom" #addressfrom="ngModel">
+            </div>
+            <br>
+            <label for="addressTo" class="col-sm-2 col-form-label col-form-label-sm">Address To</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-sm" name="addressfrom" id="addressTo" placeholder="{{order.addressTo}}" value="{{order.addressTo}}" [(ngModel)]="order.addressTo">
+            </div>
+            <br>
+            <label for="doDate" class="col-sm-2 col-form-label col-form-label-sm">Do Date</label>
+            <div class="col-sm-10">
+              <input required type="datetime-local" class="form-control form-control-sm" name="dodate" id="doDate" placeholder="{{order.doDate}}" value="{{order.doDate}}" [(ngModel)]="order.doDate" #dodate="ngModel">
+            </div>
+            <br>
+            <label for="info" class="col-sm-2 col-form-label col-form-label-sm">Info</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-sm" name="info" id="info" placeholder="{{order.info}}" value="{{order.info}}" [(ngModel)]="order.info">
+            </div>
+            <br>
+            <button form="skjema" type="submit" class="btn btn-success" style="margin-left: 80%;" [disabled]="!heroForm.form.valid">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

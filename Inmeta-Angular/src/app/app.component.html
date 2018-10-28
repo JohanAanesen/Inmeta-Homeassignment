@@ -1,7 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="align-content-center">
-  <h1>{{ title }}</h1>
-</div>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">{{title}}</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>
