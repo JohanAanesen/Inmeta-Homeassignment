@@ -1,23 +1,24 @@
 <div class="row">
-  <div *ngFor="let result of results" class="col-md-4" style="margin: 0px;">
+  <div *ngFor="let order of results" class="col-md-4" style="margin: 0px;">
     <div class="card my-2 mx-2">
       <div class="card-header">
-        <h2 class="float-left">{{result.service}}</h2>
-        <div class="float-right"><button class="btn btn-danger" (click)="delete(result)">Delete</button> </div>
+        <h2 class="float-left">{{order.service}}</h2>
+        <div class="float-right"><button class="btn btn-secondary" ><i class="far fa-edit"></i></button> </div>
+        <div class="float-right"><button class="btn btn-danger" (click)="deleteOrder(order)"><i class="fas fa-times"></i></button> </div>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col">
-            <p>Name: <b>{{result.name}}</b></p>
-            <p>Email: <b>{{result.email}}</b></p>
-            <p>Phone: <b>{{result.phone}}</b></p>
-            <p>AddressFrom: <b>{{result.addressFrom}}</b></p>
-            <p>AddressTo: <b>{{result.addressTo}}</b></p>
-            <p>CustomerId: <b>{{result.customerId}}</b></p>
-            <p>OrderId: <b>{{result.orderId}}</b></p>
-            <p>Do Date: <b>{{result.doDate}}</b></p>
-            <p>Order Date: <b>{{result.orderDate}}</b></p>
-            <p>Info: <b>{{result.info}}</b></p>
+            <p>Name: <b>{{order.name}}</b></p>
+            <p>Email: <b>{{order.email}}</b></p>
+            <p>Phone: <b>{{order.phone}}</b></p>
+            <p>AddressFrom: <b>{{order.addressFrom}}</b></p>
+            <p>AddressTo: <b>{{order.addressTo}}</b></p>
+            <p>CustomerId: <b>{{order.customerId}}</b></p>
+            <p>OrderId: <b>{{order.orderId}}</b></p>
+            <p>Do Date: <b>{{order.doDate}}</b></p>
+            <p>Order Date: <b>{{order.orderDate}}</b></p>
+            <p>Info: <b>{{order.info}}</b></p>
           </div>
         </div>
       </div>
