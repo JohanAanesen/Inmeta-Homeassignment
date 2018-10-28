@@ -1,0 +1,51 @@
+<div class="row">
+  <div *ngIf="order" class="col-md-5" style="margin: 0px;">
+    <div class="card my-2 mx-2">
+      <div class="card-header">
+        <h2 class="float-left">Edit Order: {{order.orderId}}</h2>
+        <div class="float-right"><a href="/"><button class="btn btn-warning"><i class="fas fa-times"></i></button></a></div>
+        <div class="float-right"><button class="btn btn-success" (click)="updateOrder()"><i class="fas fa-check"></i></button> </div>
+      </div>
+      <div class="card-body">
+          <div class="form-group row">
+
+            <label for="service" class="col-sm-2 col-form-label col-form-label-sm">Service</label>
+            <div class="col-sm-10">
+              <select id="service" class="form-control" required [(ngModel)]="order.service" >
+                <option *ngFor="let ser of services" [value]="ser">{{ser}}</option>
+              </select>
+            </div>
+
+            <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+            <div class="col-sm-10">
+              <input disabled type="text" class="form-control form-control-sm" id="name" placeholder="{{order.name}}" value="{{order.name}}" [(ngModel)]="order.name">
+            </div>
+            <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+            <div class="col-sm-10">
+              <input disabled type="email" class="form-control form-control-sm" id="email" placeholder="{{order.email}}" value="{{order.email}}" [(ngModel)]="order.email">
+            </div>
+            <label for="phone" class="col-sm-2 col-form-label col-form-label-sm">Phone</label>
+            <div class="col-sm-10">
+              <input disabled type="number" class="form-control form-control-sm" id="phone" placeholder="{{order.phone}}" value="{{order.phone}}" [(ngModel)]="order.phone">
+            </div>
+            <label for="addressFrom" class="col-sm-2 col-form-label col-form-label-sm">Address From</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-sm" id="addressFrom" placeholder="{{order.addressFrom}}" value="{{order.addressFrom}}" [(ngModel)]="order.addressFrom">
+            </div>
+            <label for="addressTo" class="col-sm-2 col-form-label col-form-label-sm">Address To</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-sm" id="addressTo" placeholder="{{order.addressTo}}" value="{{order.addressTo}}" [(ngModel)]="order.addressTo">
+            </div>
+            <label for="doDate" class="col-sm-2 col-form-label col-form-label-sm">Do Date</label>
+            <div class="col-sm-10">
+              <input type="datetime-local" class="form-control form-control-sm" id="doDate" placeholder="{{order.doDate}}" value="{{order.doDate}}" [(ngModel)]="order.doDate">
+            </div>
+            <label for="info" class="col-sm-2 col-form-label col-form-label-sm">Info</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-sm" id="info" placeholder="{{order.info}}" value="{{order.info}}" [(ngModel)]="order.info">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

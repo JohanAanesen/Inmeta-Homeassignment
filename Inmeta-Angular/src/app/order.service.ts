@@ -16,7 +16,15 @@ export class OrderService {
     return this.http.get<Payload[]>(this.apiUrl);
   }
 
-  deleteOrder(order: Payload): Observable<Payload> {
+  getOrder(id): Observable<Payload> {
+    return this.http.get<Payload>(this.apiUrl + '/' + id);
+  }
+
+  updateOrder(order: Payload): Observable<any> {
+    return this.http.put(this.apiUrl + '/' + order.orderId, order);
+  }
+
+  deleteOrder(order: Payload): Observable<any> {
     const deleteUrl = this.apiUrl + '/' + order.orderId;
     return this.http.delete(deleteUrl);
   }

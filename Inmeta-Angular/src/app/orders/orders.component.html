@@ -3,7 +3,7 @@
     <div class="card my-2 mx-2">
       <div class="card-header">
         <h2 class="float-left">{{order.service}}</h2>
-        <div class="float-right"><button class="btn btn-secondary" ><i class="far fa-edit"></i></button> </div>
+        <div class="float-right"><button class="btn btn-secondary" routerLink="/order/{{order.orderId}}" ><i class="far fa-edit"></i></button> </div>
         <div class="float-right"><button class="btn btn-danger" (click)="deleteOrder(order)"><i class="fas fa-times"></i></button> </div>
       </div>
       <div class="card-body">
@@ -21,6 +21,16 @@
             <p>Info: <b>{{order.info}}</b></p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" style="margin: 0px;">
+    <div class="card my-2 mx-2">
+      <div class="card-header">
+        <h2 class="float-left">Add New</h2>
+      </div>
+      <div class="card-body">
+        <a href="/newOrder"><button class="btn btn-lg btn-success">Add new order</button></a>
       </div>
     </div>
   </div>

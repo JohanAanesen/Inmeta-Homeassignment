@@ -10,10 +10,7 @@ import {Payload} from '../payload';
 
 @Injectable()
 export class OrdersComponent implements OnInit {
-
-  title = 'Orders';
   results;
-  apiUrl = 'https://inmeta20181027060410.azurewebsites.net/api';
 
   constructor(private orderService: OrderService) {
   }
@@ -30,5 +27,6 @@ export class OrdersComponent implements OnInit {
     this.results = this.results.filter(h => h !== result);
     this.orderService.deleteOrder(result).subscribe();
   }
+
 
 }
