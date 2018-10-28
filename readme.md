@@ -52,15 +52,25 @@ Todo:
 - [x] Read up on Angular
 - [x] Use Bootstrap
 - [x] Dynamically create 'cards' for each order fetched from API
-- [ ] Create Order Form
+- [x] Create Order Form
 - [x] Delete Button on each card
 - [x] Edit button on each card
     - [x] Takes you to a edit card form
-- [ ] Search field?
+- [ ] ~~Search field?~~
 - [ ] GULP/Webpack
+- [x] Place Order
+- [x] Find/See Orders
+- [x] Edit Order
+- [x] Delete Order
 
 Technical Timeline:
 ---
 - I followed some simple guides to setup the Angular project, I quickly ran into some problems related to GET'ing data from my API. First issue was that the API didn't have a Allow-Access-Origin something header, took a while but I solved it by updating my APi server to using CORS service. Now I believe the server will accept anything you throw at it. It probably isn't the best to leave it super open either.. :neutral_face: 
 - Second big problem I had was trying to get the data from the response and onto an object/array. It was a bit weird since I could get the response and print it flawlessly, but when I assigned it to a variable and tried to print the variable I would only get 'Undefined' response. After a little research I realized the get function is somewhat asynchronous so when I tried to print out the variable, it hadn't been set yet... bummer! :disappointed: 
 - Finally I can use some language/framework I know.. Bootstrap!
+- I needed more than one function to get or send data to my api endpoint, so I found out that a service would be a better way to handle all http requests. This so instead of holding some http requests in every component, I would just request the service instead.
+- Struggled a bit with the 'create new order'/POST parts as I wanted form validation instead of sending the server invalid data.. Solved it by reading the angular documentation.
+- One of the user stories is "I want to find an order that I've previously placed for a customer"
+    - I wanted to make a search bar so you could search for the customer and get all his orders listed, but I deemed it unnecessary to meet the criteria.
+    - I am still filling that user story because you can indeed find the order, just not search or list for it. In a real setting I would contact my client and ask specifially how he would like it, but it is 17:30 on a sunday so I don't want to bother Moa.
+
