@@ -98,6 +98,12 @@ namespace Inmeta.Controllers
             {
                 //since customer does not exist, add customer to db
                 customer = payload.GetCustomer();
+
+                //return 400 if the customer is lacking information
+                if(customer.Name == "" || customer.Email == "" || customer.Phone < 10000000)
+                {
+                    return BadRequest();
+                }
                 _context.Customer.Add(customer);
                 await _context.SaveChangesAsync();
 

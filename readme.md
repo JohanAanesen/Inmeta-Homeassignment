@@ -1,3 +1,51 @@
+DEMO&API Links
+===
+API Available through
+---
+https://inmeta20181027060410.azurewebsites.net/api
+
+GET api/ returns all the orderds
+GET api/1 returns order with id 1
+POST API/ creates new order with data from request and returns this object
+PUT api/1 updates order 1 with new data from request
+DELETE api/1 deletes order 1
+
+Eksempel POST|PUT data:
+```
+{
+	"name": "Johan Aanesen",
+	"phone": "22225555",
+	"email": "johan.aanesen@gmail.com",
+	"addressfrom": "Pannekakeveien 32",
+	"addressto": "Måneveien 1",
+	"dodate": "2020-02-12",
+	"service": "Moving",
+	"info": "My back hurts"
+}
+```
+GET/1 respons
+```
+{
+    "customerId": 1,
+    "orderId": 1,
+    "name": "Johan Aanesen",
+    "phone": 97175079,
+    "email": "johan.aanesen@gmail.com",
+    "addressFrom": "Stasjonsveien 57",
+    "addressTo": "Bassengveien 24",
+    "service": "Packing",
+    "doDate": "2018-02-12T00:00:00",
+    "orderDate": "2018-10-27T18:42:14.043",
+    "info": "ay makarena"
+}
+```
+
+Rakk ikke å knote med pakkingen av Angular appen.. :cry: 
+
+* C# Delen ligger i /Inmeta
+* Angular Delen ligger i /Inmeta-Angular der /Inmeta-Angular/src/app/ innehar det meste av interesse
+
+---
 Exercise 1 – Service API
 ===
 * Write an API (Rest service) that satisfies the user stories and does the business logic. In exercise 2, you will create a web application that will use the API.
@@ -75,4 +123,3 @@ Technical Timeline:
 - One of the user stories is "I want to find an order that I've previously placed for a customer"
     - I wanted to make a search bar so you could search for the customer and get all his orders listed, but I deemed it unnecessary to meet the criteria.
     - I am still filling that user story because you can indeed find the order, just not search or list for it. In a real setting I would contact my client and ask specifially how he would like it, but it is 17:30 on a sunday so I don't want to bother Moa.
-
