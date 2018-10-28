@@ -45,6 +45,10 @@ Rakk ikke å knote med pakkingen av Angular appen.. :cry:
 * C# Delen ligger i /Inmeta
 * Angular Delen ligger i /Inmeta-Angular der /Inmeta-Angular/src/app/ innehar det meste av interesse
 
+Bilde av Angular appen
+---
+![](https://folk.ntnu.no/johanaan/inmetasite.png)
+
 ---
 Exercise 1 – Service API
 ===
@@ -125,3 +129,5 @@ Technical Timeline:
     - I am still filling that user story because you can indeed find the order, just not search or list for it. In a real setting I would contact my client and ask specifially how he would like it, but it is 17:30 on a sunday so I don't want to bother Moa.
 - Can't manage to deploy the angular app through a .net web core Angular application because of some weird errors.
     - And I don't have time to figure out how to pack it (sorry).
+
+
