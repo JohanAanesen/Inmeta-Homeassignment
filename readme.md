@@ -57,6 +57,7 @@ Todo:
 - [ ] Edit button on each card
     - [ ] Takes you to a edit card form
 - [ ] Search field?
+- [ ] GULP/Webpack
 
 Technical Timeline:
 ---

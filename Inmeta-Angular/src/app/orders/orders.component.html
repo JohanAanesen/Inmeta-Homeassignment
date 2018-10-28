@@ -2,33 +2,22 @@
   <div *ngFor="let result of results" class="col-md-4" style="margin: 0px;">
     <div class="card my-2 mx-2">
       <div class="card-header">
-        <h2>{{result.service}}</h2>
+        <h2 class="float-left">{{result.service}}</h2>
+        <div class="float-right"><button class="btn btn-danger" (click)="delete(result)">Delete</button> </div>
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-5">
-            <p>Name:</p>
-            <p>email:</p>
-            <p>phone:</p>
-            <p>addressFrom:</p>
-            <p>addressTo:</p>
-            <p>customerId:</p>
-            <p>orderId:</p>
-            <p>info:</p>
-            <p>doDate:</p>
-            <p>orderDate:</p>
-          </div>
-          <div class="col-7">
-            <p>{{result.name}}</p>
-            <p>{{result.email}}</p>
-            <p>{{result.phone}}</p>
-            <p>{{result.addressFrom}}</p>
-            <p>{{result.addressTo}}</p>
-            <p>{{result.customerId}}</p>
-            <p>{{result.orderId}}</p>
-            <p>{{result.info}}</p>
-            <p>{{result.doDate}}</p>
-            <p>{{result.orderDate}}</p>
+          <div class="col">
+            <p>Name: <b>{{result.name}}</b></p>
+            <p>Email: <b>{{result.email}}</b></p>
+            <p>Phone: <b>{{result.phone}}</b></p>
+            <p>AddressFrom: <b>{{result.addressFrom}}</b></p>
+            <p>AddressTo: <b>{{result.addressTo}}</b></p>
+            <p>CustomerId: <b>{{result.customerId}}</b></p>
+            <p>OrderId: <b>{{result.orderId}}</b></p>
+            <p>Do Date: <b>{{result.doDate}}</b></p>
+            <p>Order Date: <b>{{result.orderDate}}</b></p>
+            <p>Info: <b>{{result.info}}</b></p>
           </div>
         </div>
       </div>

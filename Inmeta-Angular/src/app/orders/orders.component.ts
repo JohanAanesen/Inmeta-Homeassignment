@@ -26,4 +26,11 @@ export class OrdersComponent implements OnInit {
 
   }
 
+  delete(result: Payload): void {
+    this.results = this.results.filter(h => h !== result);
+    // this.heroService.deleteHero(hero).subscribe();
+    const deleteUrl = this.apiUrl + '/' + result.orderId;
+    this.http.delete(deleteUrl).subscribe();
+  }
+
 }
