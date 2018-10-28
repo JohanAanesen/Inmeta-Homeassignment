@@ -49,13 +49,13 @@ Exercise 2 - Web
 
 Todo:
 ---
-- [ ] Read up on Angular
+- [x] Read up on Angular
 - [x] Use Bootstrap
 - [x] Dynamically create 'cards' for each order fetched from API
 - [ ] Create Order Form
-- [ ] Delete Button on each card
-- [ ] Edit button on each card
-    - [ ] Takes you to a edit card form
+- [x] Delete Button on each card
+- [x] Edit button on each card
+    - [x] Takes you to a edit card form
 - [ ] Search field?
 - [ ] GULP/Webpack
 
