@@ -123,3 +123,5 @@ Technical Timeline:
 - One of the user stories is "I want to find an order that I've previously placed for a customer"
     - I wanted to make a search bar so you could search for the customer and get all his orders listed, but I deemed it unnecessary to meet the criteria.
     - I am still filling that user story because you can indeed find the order, just not search or list for it. In a real setting I would contact my client and ask specifially how he would like it, but it is 17:30 on a sunday so I don't want to bother Moa.
+- Can't manage to deploy the angular app through a .net web core Angular application because of some weird errors.
+    - And I don't have time to figure out how to pack it (sorry).
